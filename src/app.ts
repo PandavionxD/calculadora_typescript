@@ -7,6 +7,6 @@ import { ServerApp } from './presentation/server-app';
 })();
 
 function main() {
-  const {b:base,l:limit,s:showTable} = yarg;
-  ServerApp.run({base, limit, showTable:true});
+  const {b:base,l:limit,s:showTable,n:name,d:destination} = yarg;
+  ServerApp.run({base, limit, showTable:true ,name , destination});
 }

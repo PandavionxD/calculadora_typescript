@@ -5,10 +5,12 @@ export interface runOptions {
   base: number;
   limit: number;
   showTable: boolean;
+  destination?: string;
+  name?: string;
 }
 
 export class ServerApp {
-  static run({ base, limit, showTable }: runOptions) {
+  static run({ base, limit, showTable, name , destination }: runOptions) {
     console.clear();
     console.log("server run!!!");
     console.log({ base, limit, showTable });
@@ -16,7 +18,7 @@ export class ServerApp {
     if (showTable) console.log({ table });
     const dataTable = new CreateRuta().execute({
       data: table,
-      ruta: `outputs/tabla del ${base}`,
+      ruta: `${destination}/${name} - ${base}`,
     });
     dataTable ? console.log("Data creada") : console.log("Ups, salio un error");
   }
