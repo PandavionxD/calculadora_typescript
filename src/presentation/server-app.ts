@@ -5,12 +5,12 @@ export interface runOptions {
   base: number;
   limit: number;
   showTable: boolean;
-  destination?: string;
-  name?: string;
+  destination: string;
+  name: string;
 }
 
 export class ServerApp {
-  static run({ base, limit, showTable, name , destination }: runOptions) {
+  static run({ base, limit, showTable, name, destination }: runOptions) {
     console.clear();
     console.log("server run!!!");
     console.log({ base, limit, showTable });
